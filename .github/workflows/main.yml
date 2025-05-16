@@ -12,6 +12,20 @@ jobs:
       MY_VARIABLE: "This is a variable"
       
     steps:
+
+      - uses: actions/checkout@v3
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload site content
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2
+
       - uses: actions/checkout@v3
 
       - name: Set up Node.js
