@@ -6,18 +6,14 @@ on:
       - main
 
 jobs:
-  1-job:
+  job:
     runs-on: ubuntu-latest
-
+    env:
+      MY_VARIABLE: "This is a variable"
+      
     steps:
       - name: Say Hello
         run: echo "Hello, GitHub Actions!"
 
-  2-job:
-    runs-on: ubuntu-latest
-    env:
-      MY_VARIABLE: "This is a variable"
-
-    steps:
       - name: Show environment variable
         run: echo "The value of MY_VARIABLE is ${{ env.MY_VARIABLE }}"
