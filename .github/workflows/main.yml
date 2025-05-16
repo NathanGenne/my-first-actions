@@ -17,3 +17,6 @@ jobs:
 
       - name: Show environment variable
         run: echo "The value of MY_VARIABLE is ${{ env.MY_VARIABLE }}"
+
+      - name: Show secret (masked)
+        run: echo "The secret is ${{ secrets.MY_SECRET }}"
