@@ -23,7 +23,7 @@ jobs:
         run: npm ci
 
       - name: Run tests
-        run: npx test
+        run: npx jest
 
       - name: Say Hello
         run: echo "Hello, GitHub Actions!"
