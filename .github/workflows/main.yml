@@ -22,8 +22,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run tests
+      - name: Run tests & coverage
         run: npx jest
+
+      - name: Upload coverage to Coveralls
+        run: npx coveralls < coverage/lcov.info
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+
 
       - name: Say Hello
         run: echo "Hello, GitHub Actions!"
