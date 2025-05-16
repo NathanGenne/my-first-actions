@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  
+  permission:
+    contents: write
 
 jobs:
   build-and-test:
@@ -13,17 +16,19 @@ jobs:
       
     steps:
 
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v3
 
-      - name: Upload site content
+      - name: Upload static files
         uses: actions/upload-pages-artifact@v2
         with:
           path: ./public
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v2
 
       - uses: actions/checkout@v3
