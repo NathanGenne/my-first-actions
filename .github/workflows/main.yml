@@ -20,4 +20,4 @@ jobs:
 
     steps:
       - name: Show environment variable
-        run: echo "The value of MY_VARIABLE is: ${{ env.MY_VARIABLE }}"
+        run: echo "The value of MY_VARIABLE is ${{ env.MY_VARIABLE }}"
